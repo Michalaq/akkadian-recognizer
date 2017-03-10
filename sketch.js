@@ -1,10 +1,27 @@
 function saveImage() {
     var canvas = document.getElementById("simple_sketch");
-    var img = canvas.toDataURL('image/jpeg');
-    this.href = img;
+    window.open(canvas.toDataURL("png"));
 }
 
 document.getElementById('saveButton').addEventListener('click', saveImage, false);
+var triangle_start_x;
+var triangle_start_y;
+var _sketch;
+
+function drawTriangle() {
+        var canvas = document.getElementById('canvas');
+        if (canvas.getContext) {
+            var ctx = canvas.getContext('2d');
+
+            var sWidth = canvas.width;
+            var sHeight = canvas.height;
+            var path=new Path2D();
+            path.moveTo((sWidth/2)+50,sHeight/2);
+            path.lineTo((sWidth/2),(sHeight/2)-50);
+            path.lineTo((sWidth/2)-50,sHeight/2);
+            ctx.fill(path);
+        }
+    }
 
 var __slice = Array.prototype.slice;
 (function($) {
@@ -35,6 +52,7 @@ var __slice = Array.prototype.slice;
       return this;
     }
   };
+
   Sketch = (function() {
     function Sketch(el, opts) {
       this.el = el;
@@ -136,8 +154,11 @@ var __slice = Array.prototype.slice;
       switch (e.type) {
         case 'mousedown':
         case 'touchstart':
-          this.startPainting();
-          break;
+            //triangle_start_x = e.events[0].x;
+            //triangle_start_y = e.events[0].y;
+            //Console.console.log(triangle_start_y);
+            this.startPainting();
+            break;
         case 'mouseup':
         case 'mouseout':
         case 'mouseleave':
@@ -184,4 +205,5 @@ var __slice = Array.prototype.slice;
       return this.context.globalCompositeOperation = oldcomposite;
     }
   };
+  _sketch = Sketch;
 })(jQuery);
