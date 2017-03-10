@@ -1,6 +1,11 @@
 function saveImage() {
     var canvas = document.getElementById("simple_sketch");
-    window.open(canvas.toDataURL("png"));
+    //window.open(canvas.toDataURL("png"));
+    var ctx=canvas.getContext("2d");
+    ctx.globalCompositeOperation="destination-over";
+    ctx.fillStyle="#FFFFFF";
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+    window.open(canvas.toDataURL("image/png"));
 }
 
 document.getElementById('saveButton').addEventListener('click', saveImage, false);
@@ -8,8 +13,17 @@ var triangle_start_x;
 var triangle_start_y;
 var _sketch;
 
+window.onload = start;
+
+function start() {
+    var canvas = document.getElementById('simple_sketch');
+    var ctx=canvas.getContext("2d");
+    ctx.fillStyle="#FF0000";
+    ctx.fillRect(20,20,150,100);
+}
+
 function drawTriangle() {
-        var canvas = document.getElementById('canvas');
+        var canvas = document.getElementById('simple_sketch');
         if (canvas.getContext) {
             var ctx = canvas.getContext('2d');
 
@@ -154,9 +168,8 @@ var __slice = Array.prototype.slice;
       switch (e.type) {
         case 'mousedown':
         case 'touchstart':
-            //triangle_start_x = e.events[0].x;
-            //triangle_start_y = e.events[0].y;
-            //Console.console.log(triangle_start_y);
+            triangle_start_x = e.pageX;
+            triangle_start_y = e.pageY;
             this.startPainting();
             break;
         case 'mouseup':
@@ -164,7 +177,8 @@ var __slice = Array.prototype.slice;
         case 'mouseleave':
         case 'touchend':
         case 'touchcancel':
-          this.stopPainting();
+            drawTriangle();
+            this.stopPainting();
       }
       if (this.painting) {
         this.action.events.push({
