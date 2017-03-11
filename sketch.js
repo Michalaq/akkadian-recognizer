@@ -160,7 +160,7 @@ var __slice = Array.prototype.slice;
         case 'touchcancel':
             triangle_end_x = e.pageX - this.canvas.offset().left;
             triangle_end_y = e.pageY - this.canvas.offset().top;
-            should_draw_triangle = true;
+            should_draw_triangle = this.painting;
             this.stopPainting();
             should_draw_triangle = false;
       }
@@ -172,6 +172,8 @@ var __slice = Array.prototype.slice;
         });
         return this.redraw();
       }
+      console.log(e.type);
+      console.log(this.painting);
     },
     draw: function(action) {
       var event, previous, _i, _len, _ref;
@@ -181,11 +183,10 @@ var __slice = Array.prototype.slice;
       this.context.moveTo(action.events[0].x, action.events[0].y);
 
       _ref = action.events;
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        event = _ref[_i];
-        this.context.lineTo(event.x, event.y);
-        previous = event;
-      }
+      _len = _ref.length;
+      event = _ref[_len - 1];
+      this.context.lineTo(event.x, event.y);
+      previous = event;
 
       this.context.closePath();
 
@@ -194,9 +195,9 @@ var __slice = Array.prototype.slice;
       for (_i = 0, _len = this.triangles.length; _i < _len; _i++) {
         triangle = this.triangles[_i];
 
+        this.context.beginPath();
         this.context.moveTo(triangle.p1x, triangle.p1y);
 
-        this.context.beginPath();
 
         this.context.moveTo(triangle.p2x, triangle.p2y);
         this.context.lineTo(triangle.l1x, triangle.l1y);
@@ -214,6 +215,7 @@ var __slice = Array.prototype.slice;
       }
 
       if (should_draw_triangle) {
+          this.context.beginPath();
           this.context.moveTo(triangle_start_x, triangle_start_y);
 
           var vecX = triangle_end_x - triangle_start_x;
@@ -224,7 +226,6 @@ var __slice = Array.prototype.slice;
 
             //this.context.lineWidth = 5;
 
-            this.context.beginPath();
 
             this.context.moveTo(triangle_start_x + perpVecX * 5, triangle_start_y + perpVecY * 5);
             this.context.lineTo((triangle_start_x + triangle_end_x) / 2, (triangle_start_y + triangle_end_y) / 2);
