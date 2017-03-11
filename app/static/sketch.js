@@ -23,7 +23,6 @@ function saveImage() {
         // need is to return the url to the file, you just saved
         // and than put the image in your browser.
     });
-    window.open(dataURL);
 }
 
 document.getElementById('saveButton').addEventListener('click', saveImage, false);
