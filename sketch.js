@@ -148,7 +148,6 @@ var __slice = Array.prototype.slice;
       switch (e.type) {
         case 'mousedown':
         case 'touchstart':
-            console.log(e);
             triangle_start_x = e.pageX - this.canvas.offset().left;
             triangle_start_y = e.pageY - this.canvas.offset().top;
             this.startPainting();
@@ -172,8 +171,6 @@ var __slice = Array.prototype.slice;
         });
         return this.redraw();
       }
-      console.log(e.type);
-      console.log(this.painting);
     },
     draw: function(action) {
       var event, previous, _i, _len, _ref;
@@ -226,14 +223,15 @@ var __slice = Array.prototype.slice;
 
             //this.context.lineWidth = 5;
 
+            var perpVecLen = Math.sqrt(perpVecX*perpVecX + perpVecY*perpVecY);
 
-            this.context.moveTo(triangle_start_x + perpVecX * 5, triangle_start_y + perpVecY * 5);
-            this.context.lineTo((triangle_start_x + triangle_end_x) / 2, (triangle_start_y + triangle_end_y) / 2);
+            this.context.moveTo(triangle_start_x + (perpVecX / perpVecLen) * 5, triangle_start_y + (perpVecY / perpVecLen) * 5);
+            this.context.lineTo(triangle_start_x + (triangle_end_x - triangle_start_x) / 3, triangle_start_y + (triangle_end_y - triangle_start_y) / 3);
 
-            this.context.moveTo(triangle_start_x - perpVecX * 5, triangle_start_y - perpVecY * 5);
-            this.context.lineTo((triangle_start_x + triangle_end_x) / 2, (triangle_start_y + triangle_end_y) / 2);
+            this.context.moveTo(triangle_start_x - (perpVecX / perpVecLen) * 5, triangle_start_y - (perpVecY / perpVecLen) * 5);
+            this.context.lineTo(triangle_start_x + (triangle_end_x - triangle_start_x) / 3, triangle_start_y + (triangle_end_y - triangle_start_y) / 3);
 
-            this.context.lineTo(triangle_start_x + perpVecX * 5, triangle_start_y + perpVecY * 5);
+            this.context.lineTo(triangle_start_x + (perpVecX / perpVecLen) * 5, triangle_start_y + (perpVecY / perpVecLen) * 5);
 
             this.context.closePath();
 
@@ -245,18 +243,18 @@ var __slice = Array.prototype.slice;
           this.triangles.push({
             p1x: triangle_start_x,
             p1y: triangle_start_y,
-            p2x: triangle_start_x + perpVecX * 5,
-            p2y: triangle_start_y + perpVecY * 5,
-            p3x: triangle_start_x - perpVecX * 5,
-            p3y: triangle_start_y - perpVecY * 5,
-            p4x: triangle_start_x + perpVecX * 5,
-            p4y: triangle_start_y + perpVecY * 5,
-            l1x: (triangle_start_x + triangle_end_x) / 2,
-            l1y: (triangle_start_y + triangle_end_y) / 2,
-            l2x: (triangle_start_x + triangle_end_x) / 2,
-            l2y: (triangle_start_y + triangle_end_y) / 2,
-            l3x: triangle_start_x + perpVecX * 5,
-            l3y: triangle_start_y + perpVecY * 5
+            p2x: triangle_start_x + (perpVecX / perpVecLen) * 5,
+            p2y: triangle_start_y + (perpVecY / perpVecLen) * 5,
+            p3x: triangle_start_x - (perpVecX / perpVecLen) * 5,
+            p3y: triangle_start_y - (perpVecY / perpVecLen) * 5,
+            p4x: triangle_start_x + (perpVecX / perpVecLen) * 5,
+            p4y: triangle_start_y + (perpVecY / perpVecLen) * 5,
+            l1x: triangle_start_x + (triangle_end_x - triangle_start_x) / 3,
+            l1y: triangle_start_y + (triangle_end_y - triangle_start_y) / 3,
+            l2x: triangle_start_x + (triangle_end_x - triangle_start_x) / 3,
+            l2y: triangle_start_y + (triangle_end_y - triangle_start_y) / 3,
+            l3x: triangle_start_x + (perpVecX / perpVecLen) * 5,
+            l3y: triangle_start_y + (perpVecY / perpVecLen) * 5
           });
       }
 
