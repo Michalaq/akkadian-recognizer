@@ -39,6 +39,7 @@ def save():
     s = request.form['json_string']
     s = json.loads(s)
     results = search(s, 5)
+    print(s)
     matches = [{'desc': lookup[result] if result in lookup else None, 'imgBase64': load_base64(result)} for result in results]
     im = Image.open(BytesIO(base64.b64decode(img)))
     print(im)

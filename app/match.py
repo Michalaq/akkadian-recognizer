@@ -88,7 +88,7 @@ def stroke_to_ft(stroke):
         return (dir, x1, y1)
 
 def search(strokes, k):
-    fts1 = map(stroke_to_ft, strokes)
+    fts1 = list(map(stroke_to_ft, strokes))
 
     best_path = None
     best_score = float('+inf')
