@@ -11,31 +11,10 @@ function saveImage() {
 document.getElementById('saveButton').addEventListener('click', saveImage, false);
 var triangle_start_x;
 var triangle_start_y;
+var triangle_end_x;
+var triangle_end_y;
+var should_draw_triangle = false;
 var _sketch;
-
-window.onload = start;
-
-function start() {
-    var canvas = document.getElementById('simple_sketch');
-    var ctx=canvas.getContext("2d");
-    ctx.fillStyle="#FF0000";
-    ctx.fillRect(20,20,150,100);
-}
-
-function drawTriangle() {
-        var canvas = document.getElementById('simple_sketch');
-        if (canvas.getContext) {
-            var ctx = canvas.getContext('2d');
-
-            var sWidth = canvas.width;
-            var sHeight = canvas.height;
-            var path=new Path2D();
-            path.moveTo((sWidth/2)+50,sHeight/2);
-            path.lineTo((sWidth/2),(sHeight/2)-50);
-            path.lineTo((sWidth/2)-50,sHeight/2);
-            ctx.fill(path);
-        }
-    }
 
 var __slice = Array.prototype.slice;
 (function($) {
@@ -84,6 +63,7 @@ var __slice = Array.prototype.slice;
       this.tool = this.options.defaultTool;
       this.actions = [];
       this.action = [];
+      this.triangles = [];
       this.canvas.bind('click mousedown mouseup mousemove mouseleave mouseout touchstart touchmove touchend touchcancel', this.onEvent);
       if (this.options.toolLinks) {
         $('body').delegate("a[href=\"#" + (this.canvas.attr('id')) + "\"]", 'click', function(e) {
@@ -168,8 +148,9 @@ var __slice = Array.prototype.slice;
       switch (e.type) {
         case 'mousedown':
         case 'touchstart':
-            triangle_start_x = e.pageX;
-            triangle_start_y = e.pageY;
+            console.log(e);
+            triangle_start_x = e.pageX - this.canvas.offset().left;
+            triangle_start_y = e.pageY - this.canvas.offset().top;
             this.startPainting();
             break;
         case 'mouseup':
@@ -177,8 +158,11 @@ var __slice = Array.prototype.slice;
         case 'mouseleave':
         case 'touchend':
         case 'touchcancel':
-            drawTriangle();
+            triangle_end_x = e.pageX - this.canvas.offset().left;
+            triangle_end_y = e.pageY - this.canvas.offset().top;
+            should_draw_triangle = true;
             this.stopPainting();
+            should_draw_triangle = false;
       }
       if (this.painting) {
         this.action.events.push({
@@ -195,12 +179,86 @@ var __slice = Array.prototype.slice;
       this.context.lineCap = "round";
       this.context.beginPath();
       this.context.moveTo(action.events[0].x, action.events[0].y);
+
       _ref = action.events;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         event = _ref[_i];
         this.context.lineTo(event.x, event.y);
         previous = event;
       }
+
+      this.context.closePath();
+
+      this.context.stroke();
+
+      for (_i = 0, _len = this.triangles.length; _i < _len; _i++) {
+        triangle = this.triangles[_i];
+
+        this.context.moveTo(triangle.p1x, triangle.p1y);
+
+        this.context.beginPath();
+
+        this.context.moveTo(triangle.p2x, triangle.p2y);
+        this.context.lineTo(triangle.l1x, triangle.l1y);
+
+        this.context.moveTo(triangle.p3x, triangle.p3y);
+        this.context.lineTo(triangle.l2x, triangle.l2y);
+
+        this.context.lineTo(triangle.l3x, triangle.l3y);
+
+        this.context.closePath();
+        this.context.fill();
+        this.context.stroke();
+
+        previous = event;
+      }
+
+      if (should_draw_triangle) {
+          this.context.moveTo(triangle_start_x, triangle_start_y);
+
+          var vecX = triangle_end_x - triangle_start_x;
+          var vecY = triangle_end_y - triangle_start_y;
+
+          var perpVecX = 1;
+          var perpVecY = - (vecX / vecY);
+
+            //this.context.lineWidth = 5;
+
+            this.context.beginPath();
+
+            this.context.moveTo(triangle_start_x + perpVecX * 5, triangle_start_y + perpVecY * 5);
+            this.context.lineTo((triangle_start_x + triangle_end_x) / 2, (triangle_start_y + triangle_end_y) / 2);
+
+            this.context.moveTo(triangle_start_x - perpVecX * 5, triangle_start_y - perpVecY * 5);
+            this.context.lineTo((triangle_start_x + triangle_end_x) / 2, (triangle_start_y + triangle_end_y) / 2);
+
+            this.context.lineTo(triangle_start_x + perpVecX * 5, triangle_start_y + perpVecY * 5);
+
+            this.context.closePath();
+
+          //this.context.moveTo(triangle_start_x, triangle_start_y);
+          //this.context.lineTo(20,20);
+
+          this.context.fill();
+
+          this.triangles.push({
+            p1x: triangle_start_x,
+            p1y: triangle_start_y,
+            p2x: triangle_start_x + perpVecX * 5,
+            p2y: triangle_start_y + perpVecY * 5,
+            p3x: triangle_start_x - perpVecX * 5,
+            p3y: triangle_start_y - perpVecY * 5,
+            p4x: triangle_start_x + perpVecX * 5,
+            p4y: triangle_start_y + perpVecY * 5,
+            l1x: (triangle_start_x + triangle_end_x) / 2,
+            l1y: (triangle_start_y + triangle_end_y) / 2,
+            l2x: (triangle_start_x + triangle_end_x) / 2,
+            l2y: (triangle_start_y + triangle_end_y) / 2,
+            l3x: triangle_start_x + perpVecX * 5,
+            l3y: triangle_start_y + perpVecY * 5
+          });
+      }
+
       this.context.strokeStyle = action.color;
       this.context.lineWidth = action.size;
       return this.context.stroke();
