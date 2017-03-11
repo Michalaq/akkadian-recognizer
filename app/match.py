@@ -3,7 +3,7 @@ from copy import copy
 from glob import glob
 import math
 
-WRONG_TYPE_PENALTY = 0.3
+WRONG_TYPE_PENALTY = 0.5
 MISSING_MATCH_PENALTY = 1.0
 N_NEIGHBORS = 1
 

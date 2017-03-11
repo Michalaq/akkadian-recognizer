@@ -30,7 +30,7 @@ def info():
 def load_base64(result):
     with open('pics/{}.png'.format(result), 'rb') as f:
         data = f.read()
-        return base64.b64encode(data)
+        return 'data:image/png;base64,' + str(base64.b64encode(data))[2:-1]
 
 @app.route('/save', methods=['POST'])
 def save():
