@@ -1,0 +1,14 @@
+<div>        
+<div>
+        <img src="{{ templ.imgBase64 }}">
+</div>
+        <div>
+            Best matches:
+            {% for match in matches %}
+            <div>
+                    <img src="{{ match.imgBase64 }}">
+                    <span>{{ match.desc }}</span>
+            </div>
+            {% endfor %}
+        </div>
+</div>

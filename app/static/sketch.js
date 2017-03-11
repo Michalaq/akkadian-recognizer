@@ -14,7 +14,10 @@ function saveImage() {
             json_string: JSON.stringify(all_lines)
         }
     }).done(function(o) {
-        console.log('saved');
+        console.log('siema');
+        console.log(JSON.stringify(o));
+        console.log('elo!');
+        $('#response').html(o);
         // If you want the file to be visible in the browser
         // - please modify the callback in javascript. All you
         // need is to return the url to the file, you just saved
