@@ -1,13 +1,18 @@
 <div>        
 <div>
-        <img src="{{ templ.imgBase64 }}">
+        <img src="{{ templ.imgBase64 }}" class="outpng">
 </div>
         <div>
             Best matches:
             {% for match in matches %}
-            <div>
-                    <img src="{{ match.imgBase64 }}">
-                    <span>{{ match.desc }}</span>
+            <div class="resdiv">
+                    <img class="resimg" src="{{ match.imgBase64 }}">
+                    {% if 'sumer' in match.desc %}
+                    <div class="resdesc">Sumerowa interpretacja: {{ match.desc['sumer'] }}</div>
+                    {% endif %}
+                    {% if 'akad' in match.desc %}
+                    <div class="resdec">Akadyjska interpretacja: {{ match.desc['akad'] }}</div>
+                    {% endif %}
             </div>
             {% endfor %}
         </div>
