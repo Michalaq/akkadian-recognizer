@@ -20,29 +20,33 @@ def norm(fts):
     z = 1.0 / (y_max - y_min + 1)
     return [(t, (x - x_min) * z, (y - y_min) * z) for (t, x, y) in fts]
 
-def dist((t1, x1, y1), (t2, x2, y2)):
+def dist(p1, p2):
+    (t1, x1, y1) = p1
+    (t2, x2, y2) = p2
     return ((x1 - x2) ** 2 + (y1 - y2) ** 2) ** 0.5 + int(t1 != t2) * WRONG_TYPE_PENALTY
 
 def turbo_matching(fts1, fts2):
+    fts1 = list(fts1)
+    fts2 = list(fts2)
     if len(fts1) > len(fts2):
         return turbo_matching(fts2, fts1)
     
     fts1 = norm(fts1)
     fts2 = norm(fts2)
     dists = [[dist(ft1, ft2) for ft2 in fts2] for ft1 in fts1]
-    neighbors1 = [sorted(xrange(len(fts2)), key=lambda j: dists[i][j])[: N_NEIGHBORS] for i in xrange(len(fts1))]
+    neighbors1 = [sorted(range(len(fts2)), key=lambda j: dists[i][j])[: N_NEIGHBORS] for i in range(len(fts1))]
     
     def get_conflict(match):
         if not match or match[-1] == -1:
             return None
-        conflicts = [i for i in xrange(len(match) - 1) if match[i] == match[-1]]
+        conflicts = [i for i in range(len(match) - 1) if match[i] == match[-1]]
         if len(conflicts) > 0:
             return conflicts[0]
         else:
             return None
     
     def get_score(match):
-        missing2 = len(fts2) - len(filter(lambda x: x != -1, match))
+        missing2 = len(fts2) - len(list(filter(lambda x: x != -1, match)))
         return sum(dists[i][j] if match[i] != -1 else MISSING_MATCH_PENALTY for (i, j) in enumerate(match)) + missing2 * MISSING_MATCH_PENALTY
     
     def gen_matches(match_prefix=[]):
@@ -70,7 +74,8 @@ def turbo_matching(fts1, fts2):
 
 _paths = glob('pics/*.json')
 
-def stroke_to_ft(((x1, y1), (x2, y2))):
+def stroke_to_ft(stroke):
+    ((x1, y1), (x2, y2)) = stroke
     if x1 == x2 and y1 == y2:
         return ('h', x1, y1)
     else:
@@ -79,7 +84,7 @@ def stroke_to_ft(((x1, y1), (x2, y2))):
         angle = math.atan2(dy, dx) * 180 / math.pi
         das = [abs(angle - a) for a in [-90, -45, 0, 45, 90]]
         dirs = ['d', 'u', 'r', 'd', 'u']
-        dir = dirs[sorted(xrange(len(dirs)), key=lambda i: das[i])[0]]
+        dir = dirs[sorted(range(len(dirs)), key=lambda i: das[i])[0]]
         return (dir, x1, y1)
 
 def search(strokes, k):
@@ -93,5 +98,5 @@ def search(strokes, k):
             fts2 = json.loads(f.read())
         scores.append(turbo_matching(fts1, fts2))
     paths = ['.'.join(path.split('/')[-1].split('.')[: -1]) for path in _paths]
-    paths_and_scores = zip(paths, scores)
-    return zip(*list(sorted(paths_and_scores, key=lambda (_, score): score))[: k])[0]
+    paths_and_scores = list(zip(paths, scores))
+    return list(zip(*list(sorted(paths_and_scores, key=lambda s: s[1]))[: k]))[0]
