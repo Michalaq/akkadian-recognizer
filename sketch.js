@@ -174,6 +174,7 @@ var __slice = Array.prototype.slice;
     },
     draw: function(action) {
       var event, previous, _i, _len, _ref;
+      this.context.lineWidth = action.size;
       this.context.lineJoin = "round";
       this.context.lineCap = "round";
       this.context.beginPath();
@@ -194,7 +195,6 @@ var __slice = Array.prototype.slice;
 
         this.context.beginPath();
         this.context.moveTo(triangle.p1x, triangle.p1y);
-
 
         this.context.moveTo(triangle.p2x, triangle.p2y);
         this.context.lineTo(triangle.l1x, triangle.l1y);
@@ -218,11 +218,14 @@ var __slice = Array.prototype.slice;
           var vecX = triangle_end_x - triangle_start_x;
           var vecY = triangle_end_y - triangle_start_y;
 
+          if (vecY === 0) {
+              vecY = 5;
+          }
+
           var perpVecX = 1;
           var perpVecY = - (vecX / vecY);
 
-            //this.context.lineWidth = 5;
-
+          console.log(perpVecY);
             var perpVecLen = Math.sqrt(perpVecX*perpVecX + perpVecY*perpVecY);
 
             this.context.moveTo(triangle_start_x + (perpVecX / perpVecLen) * 5, triangle_start_y + (perpVecY / perpVecLen) * 5);
@@ -234,9 +237,6 @@ var __slice = Array.prototype.slice;
             this.context.lineTo(triangle_start_x + (perpVecX / perpVecLen) * 5, triangle_start_y + (perpVecY / perpVecLen) * 5);
 
             this.context.closePath();
-
-          //this.context.moveTo(triangle_start_x, triangle_start_y);
-          //this.context.lineTo(20,20);
 
           this.context.fill();
 
@@ -259,7 +259,6 @@ var __slice = Array.prototype.slice;
       }
 
       this.context.strokeStyle = action.color;
-      this.context.lineWidth = action.size;
       return this.context.stroke();
     }
   };
