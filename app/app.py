@@ -40,7 +40,10 @@ def save():
     s = json.loads(s)
     results = search(s, 5)
     print(s)
-    matches = [{'desc': json.loads(lookup[result]) if result in lookup else None, 'imgBase64': load_base64(result)} for result in results]
+    try:
+        matches = [{'desc': json.loads(lookup[result]) if result in lookup else None, 'imgBase64': load_base64(result)} for result in results]
+    except:
+        matches = [{'desc': None if result in lookup else None, 'imgBase64': load_base64(result)} for result in results]
     im = Image.open(BytesIO(base64.b64decode(img)))
     print(im)
     return render_template('res.html', templ={'imgBase64': img2}, matches=matches)
