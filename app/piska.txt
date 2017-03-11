@@ -1,0 +1,178 @@
+﻿1 (1-NAa1) { "sumer":["aš/ash","didili/didli"], "akad": ["aš/ash","dil/dil","til4/tilIIII","t.il/ttil","rum/rum","rù/ruIII","ina/ina","às/asIII","àz/azIII"]}
+2 (2-NAa2) { "sumer":["hal/hal", "buluh/buluh"], "akad": ["hal/hal"]}
+3 (3-NAa3) { "sumer":["mug/mug"], "akad": {"mug/mug", "muk/muk", "muq/muq", "puk/puk"]}
+4 (4-NAa4) { "sumer":["zadim/zadim"]}
+5 (5-NAa5) { "sumer":["ba/ba"], "akad": ["ba/ba", "pá/paII"]}
+6 (6-NAa6) { "sumer":["zu/zu"], "akad": ["zu/zu", "s.ú/ssuII"]}
+7 (7-NAa7) { "sumer":["su/su", "kuš/kush"], "akad": "su/su", "kuš/kush", "kus/kus"]}
+8 (8-NAa8) { "sumer":["šen/shen"], "akad":["rug/rug", "ruq/ruq", "šin/shin", "šun/shun", "šen/shen"]}
+9 (9-NAa9) { "sumer":["bal/bal", "bala/bala"], "akad": ["bal/bal", "pal/pal"]}
+10 (10-NAa10) { "sumer":["gír/girII"], "akad": ["ád/adII", "át/atII", "át./attII", "gír/girII"]}
+11 (11-NAa11) { "sumer":["búr/burII", "du9/duIX"], "akad": ["búl/bulII", "púl/pulII", "búr/burII", "búru/buruII"]}
+12 (12-NAa12) { "sumer":["sila/sila","sil/sil","kud/kud","ku5/kuV","haš/hash"], "akad": ["tar/tar", "t.ar/ttar", "tír/tirII", "t.ír/ttirII", "kud/kud", "kut/kut", "kut./kutt", "qud/qud", "qut/qut", "has/has", "has./hass", "haz/haz", "haš/hash", "sil/sil", "šil/shil", "gùg/gugIII"]}
+13 (13-NAa13) { "sumer":["dingir/dingir","an/an"], "akad":["an/an", "ìl/ilIII", "sa8/saVIII", "ša8/shaVIII"]}
+15 (15-NAa15) { "sumer":["ka/ka","zú/zuII", "du11/duXI", "inim/inim", "gù/guIII", "kir4/kirIIII"], "akad":["ka/ka", "qà/qaIII", "pi4/piIIII", "pe4/peIV", "du11/duXI", "zú/zuII"]}
+16 (16-NAa16) { "sumer":["tu6/tuVI","mu7/muVII"]}
+17 (17-NAa17) { "sumer":["uš12/ushXII"]}
+18 (18-NAa18) { "sumer":["nudun/nudun", "numdum/numdum"]}
+18x (21-NAa21) { "sumer":["su6/suVI", "su4/suIIII"]} 
+19 (19-NAa19) { "sumer":["puzur5/puzurV"], "akad": "bu6/buVI"]}
+20 (20-NAa20) { "sumer":["nigru/nigru"]}
+22x (22-NAa22) { "sumer":["murgu2/murguII"], "akad": "urgú/urguII"]}
+23 (23-NAa23) { "sumer":["ibira/ibira","tibira2/tibiraII"]}
+24 (24-NAa24) { "sumer":["ara9/araVIIII", "dilíb/dilibII"]}
+24’ (25-NAa25) { "sumer":["uš13/ushXIII"]}
+26 (26-NAa26) { "sumer":["bù/buIII", "sub/sub"]}
+27 (27-NAa27) { "sumer":["tukur2/tukurII"]} 
+28 (28-NAa28) { "sumer":["immin/immin]} 
+28’ (37-NAa37) { "sumer":["uš14/ushXIIII"]}
+29 (29-NAa29) { "sumer":["zabar/zabar"]} 
+30 (30-NAa30) { "sumer":["bún/bunII"], "akad":["ba5/baV"]}
+31 (31-NAa31) { "sumer":["kan4/kanIIII"], "akad":["adaru"]}
+32 (32-NAa32) { "sumer":["eme/eme"], "akad": "em4/emIIII", "im4/imIIII"]}
+33 (33-NAa33) { "sumer":["ma5/maV"]} 
+34 (34-NAa34) { "sumer":["šakir4/šakirIIII"]} 
+35 (35-NAa35) { "sumer":["nag/nag"], "akad":["nag/nag", "nak/nak", "naq/naq"]}
+36 (36-NAa36) { "sumer":["kú/kuII"], "akad":["kú/kuII", "gu7/guVII"]}
+38 (38-NAa38) { "sumer":["uru/uru"], "akad":["rí/riII", "ré/reII", "eri4/eriIIII"]}
+40 (40-NAa40) { "sumer":["ukkin/ukkin"]}
+41 (41-NAa41) { "sumer":["banšur/banshur"]}
+43 (43-NAa43) { "sumer":["uru2/uruII"], "akad": ["ru4/ruIIII"]}
+44 (44-NAa44) { "sumer":["silig/silig", "šilig/shilig"]}
+46 (46-NAa46) { "sumer":["gur5/gurV"]} 
+49 (49-NAa49) { "sumer":["erìn/erinIII"]}
+49x (47-NAa47) { "sumer":["gišgal/gishgal", "qàl/qalIII"]}
+49x /2 (48-NAa48) { "sumer":["gišgal2/gishgalII"]}
+50 (50-NAa50) { "sumer":"ìr/irIII", "nita2/nitaII"], "akad":["èr/erIII", "ìr/irIII", "nitá/nitaII", "arad/arad"]}
+50.2 (51-NAa51) { "sumer": "arad2"]} 
+52 (52-NAa52) { "sumer":["iti/iti","itu/itu"]}
+53 (53-NAa53) { "sumer":["šah/shah", "subur/subur", "šubur/shubur"], "akad": ["šah/shah", "ših/shih", "sih/sih"]}
+54 (54-NAa54) { "sumer":["buru14/buruXIIII", "sibír/sibirII"]}
+55 (55-NAa55) { "sumer":["la/la", "šik/shika"]}
+56 (56-NAa56) { "sumer":["apin/apin", "engar/engar","lá/laII"], "akad":["pin/pin"]}
+57 (57-NAa57) { "sumer":["mah/mah"], "akad": ["mah/mah," "meh/meh", "mih/mih"]}
+58 (58-NAa58) { "sumer":["tu/tu","ku/kuIIII", "tu/tu":42,], "akad": "tu/tu", "t.ú/ttuII", "dú/duII"]}
+59 (59-NAa59) { "sumer":["li/li", "gúp/gupII"], "akad":["li/li", "le/le", "gúp/gupII", "gúb/gubII"]}
+60.a (60-NAa60) { "sumer":["kúr/kurII", "akad": "kúr/kurII"]}
+60.b (60-NAa60) { "sumer":["pap/pap"], "akad":["bab/bab", "bap/bap", "pa4/paIIII"]}
+60x (160-NAa160) { "sumer":["gàm/gamIII", "zub/zub"]}
+61 (61-NAa61) { "sumer":["mu/mu","muhaldim/muhaldim"], "akad": ["mu/mu", "šùm/shumIII"]}
+62 (62-NAa62) { "sumer":["sìla/silaIII], "akad":["qa/qa", "ka4/kaIIII", "šál/shalII"]}
+63.1 (63-NAa63) { "sumer":["kád/kadII"], "akad":["kád/kadII", "kát/katII", "šíd/shidII"]}
+63.2 (64-NAa64) { "sumer":["kàd/kadIII"], "akad": ["kàd/kadIII", "kàt/katIII"]}
+63.3 (161-NAa161) { "sumer":["tag4/tagIIII"]， “akad": ["tad/tad", "tat/tat", "dad/dad", "dat/dat", "kíd/kidII"]}
+65 (65-NAa65) { "sumer":["šešlam/sheshlam"]}
+66 (66-NAa66)  (ú)
+67 (67-NAa67) { "sumer":["gil/gil", "gib/gib", "ge16/geXVI"]}
+68 (68-NAa68) { "sumer":["ru/ru","šub/shub"], "akad": ["šup/shup","ru/ru","šub/shub"]} 
+69 (69-NAa69) { "sumer":["be/be","til/til","ziz/ziz", "úš/ushII", "idim/idim"], "akad":["pè/peIII", "pì/piIII", "bad/bad", "bat/bat", "bat./batt", "pád/padII", "pát/patII", "pát./pattII", "bít/bitII", "pít/pitII", "mid/mid", "mit/mit", "mit./mitt", "til/til", "ziz/ziz", "sun/sun"]}
+69x (39-NAa39?) { "sumer":["gurun/gurun", "buru7/buruVII"]} not created!
+70 (70-NAa70) { "sumer":["na/na"], "akad": ["na/na"]}
+71 (71-NAa71) { "sumer":["šir/shir"], "akad": ["šir/shir"]}
+72 (72-NAa72) { "sumer":["numun/numun"], "akad": ["kul/kul", "qul/qul"]}
+73 (73-NAa73) { "sumer":["ti/ti"], "akad": ["ti/ti", "t.ì/ttiIII"]} 
+74.1a (74-NAa74) { "sumer":["bar/bar"], "akad": ["bar/bar", "pár/parII"]} AKKonehalf
+74.1b (74-NAa74) { "sumer":["maš/mash"], "akad": ["maš/mash", "mas/mas", "mas./mass"]} 
+74.2b variant (174-NAa174)  { "sumer":["gedím/gedimII"]}
+74.3,74x (175-NAa175)  { "sumer":["dalla/dalla", "idigna/idigna"]}
+75 (75-NAa75) { "sumer":["nu/nu"], "akad": ["nu/nu"]}
+76 (76-NAa76) { "sumer":["máš/mashII"], "akad": ["máš/mashII"]}
+77 (77-NAa77) { "sumer":["kun/kun"], "akad": ["kun/kun"]} 
+78 (78-NAa78) { "sumer":["mušen/mushen"], "akad": ["hu/hu", "pag/pag", "paq/paq", "pak/pak", "bak/bak", "u11/uXI"]}
+78x (178-NAa178) { "sumer":["u5/uV"], "akad": ["u5/uV"]}
+79 (79-NAa79)  { "sumer":["nam/nam", "sim/sim"], "akad": ["nam/nam", "sim/sim", "ším/shimII", "bir5/birV"]} 
+79x (179-NAa179)  { "sumer":["bur5/burV"], "akad": ["bur5/burV", "buru5/buruV"]}
+79x variant (180-NAa180) 
+80 (80-NAa80) { "sumer":["ig/ig", "gál/galII"], "akad": ["ig/ig", "iq/iq", "ik/ik", "eg/eg", "eq/eq", "ek/ek"]}
+81 (81-NAa81) { "sumer":["mud/mud"], "akad": ["mud/mud", "mut/mut", "mut./mutt"]} 
+82 (82-NAa82) { "sumer":["sa4 /saIIII"], "akad": ["sa4 /saIIII", "še18/sheXVIII"]}
+83 (83-NAa83) { "sumer":["šita3/shitaIII", "súd/sudII"], "akad": ["rad/rad", "rat/rat", "rat./ratt"]}
+84 (84-NAa84) { "sumer":["zi/zi"], "akad": ["zi/zi", "ze/ze", "s.í/ssiII", "sí/siII"]}
+85 (85-NAa85) { "sumer":["gi/gi"], "akad": ["gi/gi", "ge/ge", "qì/qiIII", "qè/qeIII", "kí/kiII"]}
+86 (86-NAa86) { "sumer":["ri/ri", "dal/dal"], "akad": ["ri/ri", "dal/dal", "re/re",  "tal/tal", "t.al/ttal"]}
+87 (87-NAa87) { "sumer":["nun/nun"], "akad": ["nun/nun", "síl/silII", "s.il/ssil", "zil/zil"]}
+87a (116-NAa116) { "sumer":["tùr/turIII"], "akad": ["tùr/turIII"]}
+87b (117-NAa117) { "sumer":["šilam/shilam"]}
+88.a (88-NAa88) { "sumer":["gùb/gubIII", "húb/hubII"], "akad": ["kab/kab", "kap/kap", "qáb/qabII", "qáp/qapII", "gáb/gabII", "gáp/gapII", "húp/hupII", "kùb/kubIII", "qùp/qupIII", "gùb/gubIII"]}
+88.b (88-NAa88) { "sumer":["gùb/gubIII", "húb/hubII"], "akad": ["kab/kab", "kap/kap", "qáb/qabII", "qáp/qapII", "gáb/gabII", "gáp/gapII", "húp/hupII", "kùb/kubIII", "qùp/qupIII", "gùb/gubIII"]} 
+89 (89-NAa89) { "sumer":["hub/hub","tun/tun", "tu10/tuX"], "akad": ["hub/hub","hup/hup", "qúp/qupII", "kúp/kupII"]} 
+89 variant (189-NAa189) 
+90 (90-NAa90) { "sumer":["gad/gad", "gada/gada"], "akad": ["gad/gad", "gada/gada", "gat/gat", "gat./gatt", "qàd/qadIII", "qàt/qatIII", "kad/kad", "kat/kat", "kat./katt"]}
+92 (92-NAa92)  { "sumer":["aakkil/akkil"]}
+92b (91-NAa91) { "sumer":["umbin/umbin"]}
+93 (93-NAa93) { "sumer":["šinig/shinig"]}
+94 (94-NAa94) { "sumer":["dim/dim"], "akad": ["dim/dim", "tim/tim", "tì/tiIII"]}
+95 (95-NAa95) { "sumer":["mun/mun"]} 
+96 (96-NAa96) { "sumer":["bulug/bulug"]} 
+97 (97-NAa97) { "sumer":["ag/ag", "ša5/shaV"], "akad": ["ag/ag", "ak/ak", "aq/aq"]}
+98 (98-NAa98) { "sumer":["mè/meIII"]} 
+99 (99-NAa99) { "sumer":["en/en"], "akad": ["en/en"]}
+100 (100-NAa100) { "sumer":["dàra/daraIII"], "akad": ["dàr/darIII", "tàr/tarIII", "t.àr/ttarIII"]}
+101 (101-NAa101) { "sumer":["sur/sur", "šur/shur"], "akad": ["sur/sur", "šur/shur"]}
+102 (102-NAa102) { "sumer":["suh/suh", "múš/mushII"], "akad":{"suh/suh", "múš/mushII"]}
+103 (103-NAa103) { "sumer":["innana/innana"], "akad":["mùš/mushIII"]}
+103a (136-NAa136) { "sumer":["še12/sheXII"]}
+103b (137-NAa137) { "sumer":["še4/sheIIII", "šed7/shedVII"], "akad":["šed7/shedVII"]}
+104 (104-NAa104) { "sumer": ["sa/sa"], "akad": ["sa/sa"]}
+105.a (105-NAa105) { "sumer":["gán/ganII", "gama2/ganaII", "iku/iku"], "akad": ["kán/kanII, gà/gaIII"]}
+105.b (105-NAa105) { 'sumer':["kár/karII"], "akad":["ár/karII"]}
+106 (106-NAa106) { "sumer":["gú/guII"], "akad": ["tik/tik", "tig/tig", "tiq/tiq", "gú/guII"]}
+107 (107-NAa107) { "sumer":["usan/usan"]}
+108 (108-NAa108) { "sumer":["dur/dur"], "akad": ["t.ur/ttur", "túr/turII", "dur/dur"]}
+108x (198-NAa198) { "sumer":["gun/gun"], "akad":["biltu/biltu"]}
+109 (109-NAa109) { "sumer":["làl/lalIII"], "akad": ["làl/lalIII"]}
+110 (110-NAa110) { "sumer": ["ku7/kuVII", "kuš6/kushVI"]}
+111 (111-NAa111) { "sumer:["kùr/kurIII", "gur/gur"], "akad":["qur/qur", "kùr/kurIII", "gur/gur"]}
+112 (112-NAa112) {"sumer":["si/si"], "akad": ["se/se", "ší/shiII", "si/si"]}
+113 (113-NAa113) { "sumer":["su4/suIIII", "si4/siIIII"]}
+114 (114-NAa114) { "sumer":["dar/dar"], "akad":["tár/tarII", "dír/dirII", "dar/dar"]}
+115 (115-NAa115) { "sumer":["sag/sag"], "akad":["sak/sak", "sag/sag", "saq/saq", "šak/shak", "šag/shag", "šaq/shaq", "riš/rish", "ris/ris", "reš/resh", "res/res"]}
+118 (118-NAa118) { "sumer":["dilìb/dilibIII"]}
+119 (119-NAa119) { "sumer":["kàn/kanIII"]}
+122 (122-NAa122) { "sumer":["má/maII"], "akad": ["má/maII"]}
+122a (120-NAa120) { "sumer": ["dellu/dellu", "dimgul/dimgul"]}
+122b (121-NAa121) { "sumer", {"ùz/uzIII", "ud5/udV"]
+123 (123-NAa123)  { "sumer": ["dir/dir"], "akad": ["t.ir/ttir", "dir/dir", "mál/malII"]}
+124 (124-NAa124)  { "sumer": ["tab/tab"], "akad": ["tab/tab", "tap/tap", "t.ab/ttab", "t.ap/ttap", "dáb/dabII", "dáp/dapII", "taba/taba"]}
+124 variant (125-NAa125) 
+126 (126-NAa126)  {"sumer: ["tag/tag", "šum/shum"], "akad":["tak/tak", "tag/tag", "taq/taq", "šum/shum"]}
+128 (128-NAa128)  { "sumer": ["ab/ab", "èš/eshIII"], "akad": ["ap/ap", "èš/eshIII", "ab/ab"]}
+129 (129-NAa129)   { "akad": ["nab/nab", "nap/nap"]}
+129a (127-NAa127)  { "sumer":["mul/mul"]}
+130 (130-NAa130) { "sumer":["ug/ug"], "akad": ["ug/ug", "uk/uk", "uq/uq"]}
+131 (131-NAa131) { "sumer": ["az/az"], "akad":["az/az", "as/as", "as./ass", "uz4/uzIIII"]}
+131a (135-NAa135) { "sumer": ["níb/nibII"]}
+132 (132-NAa132) { "sumer":["urudu/urudu"]}
+133 (133-NAa133) { "sumer":["ká/kaII"], "akad": ["ká/kaII"]}
+134 (134-NAa134) { "sumer":["um/um"], "akad": ["u16/uXVI", "um/um", "umu/umu"]}
+138 (138-NAa138) { "sumer": ["dub/dub"], "akad": ["dub/dub","dup/dup", "tub/tub", "tup/tup", "t.ub/ttub", "t.up/ttup"]}
+139 (139-NAa139) {"sumer": ["ta/ta"], "akad" : ["ta/ta", "t.á/ttaII", "dá/daII"]}
+140 (140-NAa140) {"sumer": ["ganmuš/ganmush"]}
+142 (142-NAa142) { "sumer":["i/i"], "akad": ["i/i", "nát/natII"]}
+142a (141-NAa141) { "akad": ["ia/ia"]}
+143.a (143-NAa143) { "sumer": "gan/gan", "hé/heII",], "akad": ["gan/gan", "kan/kan", "qan/qan", "hé/heII"]}
+143.b (143-NAa143) { "sumer":["kám/kamII"], "akad": ["kám/kamII"]}
+144 (144-NAa144) { "sumer":["dumu/dumu", "tur/tur", "ibila/ibila"], "akad": ["t.ùr/tturIII", "bàn/banIII", "tur/tur"]}
+145 (145-NAa145) { "sumer":["ad/ad"], "akad": ["ad/ad", "at/at", "at./att"]}
+146 (146-NAa146) { "sumer":["hašhur/hashhur"]}
+147 (147-NAa147) { "sumer":["zé/zeII"], "akad": ["s.i/ssi", "s.e/sse", "zé/zeII", "zí/ziII"]}
+148 (148-NAa148) { "sumer":["in/in"], "akad": ["in/in"]}
+149 (149-NAa149) { "sumer":["rab/rab'], "akad": ["rap/rap"]}
+150.1 (150-NAa150) { "sumer": ["dìm/dimIII"]}
+150.2 (153-NAa153) 
+151 (151-NAa151) { "sumer":["lugal/lugal"], "akad": ["šàr/sharIII", "šarru/sharru"]}
+152.a (152-NAa152) { "sumer": ["ezen/ezen"], "akad":["šìr/shirIII", "šèr/sherIII", "hir/hir"]}
+152.b (152-NAa152) { "sumer": ["kiri6/kiriVI", "sar/sar"], "akad": ["sar/sar", "šar/shar"]}
+152.4 (154-NAa154) { "sumer":["ubara/ubara"]}
+152.8 (158-NAa158) {"sumer":["ug5/ugV", "bàd/badIII"], "akad": ["u9/uVIIII"]
+164 (164-NAa164) {"sumer":["sum/sum"], "akad":["sì/siIII", "sè/seIII", "šúm/shumII", "sum/sum"]}
+165 (165-NAa165)  {"sumer":["naga/naga"]}
+165 variant (156-NAa156) 
+166.1 (166-NAa166) {"sumer":["káš/kashII", "kaskal/kaskal"], "akad":["kas/kas", "raš/rash", "ras/ras"]} 
+166.2 (162-NAa162)  { "sumer":["illat/illat"]}
+166’ (163-NAa163) {"akad": ["tahazu"]}
+167 (167-NAa167) {"sumer": ["gab/gab", "duh/duh"], "akad":["gap/gap", "gab/gab", "duh/duh", "qab/qab", "qap/qap", "duh/duh", "t.uh/ttuh", "tuh/tuh"]}
+168 (168-NAa168) {"sumer": ["edin/edin", "bir4/birIIII"]}
+169 (169-NAa169) { "sumer":["dah/dah"], "akad": ["tah/tah", "t.ah/ttah", "dah/dah"]}
+170 (170-NAa170) {"sumer":["am/am"], "akad":["am/am"]}
+171 (171-NAa171) {"sumer":["uzu/uzu"], "akad":["šir4/shirIIII"]}
