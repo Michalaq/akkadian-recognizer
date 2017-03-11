@@ -4,6 +4,7 @@ from PIL import Image
 from io import BytesIO
 import base64
 import json
+from match import search
 
 from flask import request
 
@@ -26,16 +27,22 @@ def info():
     )
     return response
 
+def load_base64(result):
+    with open('pics/{}.png'.format(result), 'rb') as f:
+        data = f.read()
+        return data.encode('base64')
 
 @app.route('/save', methods=['POST'])
 def save():
     img2 = request.form['imgBase64']
     img = (request.form['imgBase64']).replace('data:image/png;base64,', '')
     s = request.form['json_string']
-    print(s)
+    s = json.loads(s)
+    results = search(s, 5)
+    matches = [{'desc': lookup[result] if result in lookup else None, 'imgBase64': load_base64(result)} for result in results]
     im = Image.open(BytesIO(base64.b64decode(img)))
     print(im)
-    return render_template('res.html', templ={'imgBase64': img2}, matches=[{'desc':'siemandero', 'imgBase64':img2} for _ in range(5)])
+    return render_template('res.html', templ={'imgBase64': img2}, matches=matches)
 
 
 @app.route('/')
