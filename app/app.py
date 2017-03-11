@@ -12,6 +12,8 @@ app = Flask(__name__)
 @app.route('/save', methods=['POST'])
 def save():
     img = (request.form['imgBase64']).replace('data:image/png;base64,', '')
+    s = request.form['json_string']
+    print(s)
     im = Image.open(BytesIO(base64.b64decode(img)))
     return 'dupa'
 

@@ -10,7 +10,8 @@ function saveImage() {
         type: "POST",
         url: "/save",
         data: {
-            imgBase64: dataURL
+            imgBase64: dataURL,
+            json_string: JSON.stringify(all_lines)
         }
     }).done(function(o) {
         console.log('saved');
@@ -29,6 +30,7 @@ var triangle_end_x;
 var triangle_end_y;
 var should_draw_triangle = false;
 var _sketch;
+var all_lines = [];
 
 var __slice = Array.prototype.slice;
 (function($) {
@@ -127,6 +129,16 @@ var __slice = Array.prototype.slice;
       }
       this.painting = false;
       this.action = null;
+      var n;
+      all_lines = []
+      for (var i = 0; i < this.actions.length; i++) {
+        x1 = this.actions[i].events[0].x;
+        y1 = this.actions[i].events[0].y;
+        n = this.actions[i].events.length;
+        x2 = this.actions[i].events[n - 1].x;
+        y2 = this.actions[i].events[n - 1].y;
+        all_lines.push([[x1, y1], [x2, y2]]);
+      }
       return this.redraw();
     };
     Sketch.prototype.onEvent = function(e) {
